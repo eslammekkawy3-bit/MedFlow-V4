@@ -1,0 +1,15 @@
+# Environment & secrets
+.env
+venv/
+__pycache__/
+
+# IDE
+.claude/
+
+# Build artifacts
+*.exe
+*.zip
+nul
+
+# Large binary directories
+knowledge-base.moh_protocols/
