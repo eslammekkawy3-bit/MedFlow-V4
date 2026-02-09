@@ -1,4 +1,4 @@
-# PECB Lead Implementer Experience Log
+# Implementation Experience Log
 ## ISO/IEC 42001:2023 - AI Management System Implementation
 
 **Candidate:** Dr. Islam Mekawy
@@ -20,7 +20,7 @@
 | Feb 4, 2026 | Cl.10 Improvement, Cl.6 Risk | Implemented PII extraction optimization reducing LLM token generation by 3-5x (JSON extraction vs. text rewriting strategy). Architected strict matching controls: word boundary regex preventing false protocol associations, STOP_WORDS filter for 40+ common medical modifiers. Defined General Clinical Standards fallback policy for unmatched diagnoses. Validated all 6 strict matching test cases. | 8 | `pii_scrubber.py` v2.1.0, `knowledge_base.py` v1.4.0, `cds_brain.py` v1.1.0 |
 | Feb 6, 2026 | Cl.6 Risk, Cl.8 Impact Assessment, Cl.7 Docs | Defined AI Risk Register v3.0 with 14 risks scored by likelihood x impact methodology (5-point scales, 4-tier risk rating). Authored Algorithmic Impact Assessment covering patient safety, DRG classification bias, and human oversight framework (4-tier review levels). Authored Clinical User Guide for medical reviewers (confidence interpretation, override procedures, appeal pathways). Audited folder structure and artifact integrity. | 10 | `iso42001-artifacts/AI_Risk_Register.md` v3.0, `iso42001-artifacts/Algorithmic_Impact_Assessment.md`, `iso42001-artifacts/User_Guide_Clinical.md` |
 | Feb 7, 2026 | Cl.8 Operation, Cl.9 Evaluation, Cl.7 Support | Implemented DRG Clinical Validator: 25 MDC categories with keyword frequency matching and severity marker scanning (Level A/B/C). Validated 8/8 automated test cases (100% pass rate). Integrated validator into CDS Brain as pipeline Step 7 (Dual-Check architecture: LLM context + rule-based verification). Implemented Streamlit dashboard with 7 rendering functions, 2 Plotly chart helpers, and deployment theme configuration. Updated Risk Register to v4.0 (RISK-007 upgraded, RISK-015 added). | 10 | `drg_validator.py` v1.0.0, `data/drg_clinical_rules.json` v1.1.0, `cds_brain.py` v1.2.0, `app.py` v1.0.0, `dashboard_utils.py` v1.0.0, `.streamlit/config.toml`, `iso42001-artifacts/AI_Risk_Register.md` v4.0 |
-| Feb 8, 2026 | Cl.9 Evaluation, Cl.10 Improvement, Cl.8 Standardization | Validated dashboard resilience by applying 15 null-safety guards across all 7 rendering functions. Verified PDF upload pipeline end-to-end (MOH DKA-HHS Protocol, Gemini auto-fallback confirmed). Audited 5 saved case results for crash-proof rendering. Implemented 4-lens terminology standardization system (payer/provider/auditor/judge perspectives) with color-coded safety banners and regulatory display controls. Compiled ISO Compliance Matrix (39 controls) and PECB Experience Log. | 10 | `dashboard_utils.py` v1.2.0, `terminology_system.py` v1.0.0, `app.py` v1.1.0, `iso42001-artifacts/ISO_COMPLIANCE_MATRIX.md`, `output/` (5 verified cases) |
+| Feb 8, 2026 | Cl.9 Evaluation, Cl.10 Improvement, Cl.8 Standardization | Validated dashboard resilience by applying 15 null-safety guards across all 7 rendering functions. Verified PDF upload pipeline end-to-end (MOH DKA-HHS Protocol, Gemini auto-fallback confirmed). Audited 5 saved case results for crash-proof rendering. Implemented 4-lens terminology standardization system (payer/provider/auditor/judge perspectives) with color-coded safety banners and regulatory display controls. Compiled ISO Compliance Matrix (39 controls) and Implementation Experience Log. | 10 | `dashboard_utils.py` v1.2.0, `terminology_system.py` v1.0.0, `app.py` v1.1.0, `iso42001-artifacts/ISO_COMPLIANCE_MATRIX.md`, `output/` (5 verified cases) |
 | | | **TOTAL** | **64** | |
 
 ---
@@ -62,7 +62,7 @@ The following artifacts were produced during this implementation and serve as ev
 | 10 | Resource Management Plan | MF-ISO42001-A7-001 | 2.0 | Cl.7.1, A.4 |
 | 11 | Clinical User Guide | MF-UG-CLINICAL-001 | 1.0 | Cl.7.3, A.8 |
 | 12 | ISO Compliance Matrix | MF-ISO42001-MATRIX-001 | 1.0 | All Clauses |
-| 13 | PECB Experience Log | This document | 1.0 | N/A (PECB) |
+| 13 | Implementation Experience Log | This document | 1.0 | Cl.9.2 |
 
 ### 3.2 Technical Implementation Artifacts
 
@@ -120,7 +120,7 @@ The AIMS was implemented using an iterative, phase-gated approach across 6 devel
 
 ## 5. Auditor's Critique: Gap Analysis
 
-The following gaps were identified through self-assessment. Each represents a genuine control weakness that a PECB auditor would likely challenge during a Stage 2 audit.
+The following gaps were identified through self-assessment. Each represents a genuine control weakness that an external auditor would likely challenge during a Stage 2 audit.
 
 ### Gap 1: Clause 8.2 - AI Impact Assessment (Fairness Validation)
 

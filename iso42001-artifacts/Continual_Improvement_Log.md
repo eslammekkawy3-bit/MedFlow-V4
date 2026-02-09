@@ -175,10 +175,10 @@ This document maintains a register of all improvements made to the MedFlow V3 AI
 | **Category** | Compliance (COMP) |
 | **Priority** | P2 - High |
 | **Source** | Risk Register (RISK-009: Regulatory Non-compliance) |
-| **Description** | Generated PECB Lead Implementer evidence: Experience Log (64 professional hours across 6 phases mapped to ISO clauses) and Compliance Matrix (39 controls mapped with implementation status and evidence cross-references). |
+| **Description** | Generated ISO 42001 Lead Implementer evidence: Experience Log (64 professional hours across 6 phases mapped to ISO clauses) and Compliance Matrix (39 controls mapped with implementation status and evidence cross-references). |
 | **Benefit** | Formal certification pathway evidence. 97% control coverage documented. |
 | **Implemented** | 2026-02-08 (Session 10) |
-| **Evidence** | `iso42001-artifacts/PECB_EXPERIENCE_LOG.md`, `iso42001-artifacts/ISO_COMPLIANCE_MATRIX.md` |
+| **Evidence** | `iso42001-artifacts/Implementation_Experience_Log.md`, `iso42001-artifacts/ISO_COMPLIANCE_MATRIX.md` |
 | **Status** | COMPLETED |
 
 ---
