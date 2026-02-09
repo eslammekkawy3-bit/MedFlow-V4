@@ -173,7 +173,9 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Root Cause** | Single-researcher project; formal HR documentation not prioritized |
 | **Corrective Action** | Create competence matrix mapping roles to required qualifications. Document Lead Implementer credentials (medical degree, AI training, ISO awareness). |
 | **Target Date** | 2026-03-15 |
-| **Status** | OPEN |
+| **Action Taken** | Competence Assessment Matrix (MF-ISO42001-CAM-001) created with 6 certifications, 16+ yrs experience, and 3-role competence mapping. |
+| **Closure Date** | 2026-02-09 |
+| **Status** | **CLOSED** |
 
 #### NC-002: Algorithmic Fairness Validation Not Executed
 | Attribute | Detail |
@@ -242,7 +244,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 
 | NC ID | Clause | Corrective Action | Target Date | Owner |
 |-------|--------|-------------------|-------------|-------|
-| NC-001 | 7.2 | Create competence matrix + document credentials | 2026-03-15 | Dr. Islam Mekawy |
+| NC-001 | 7.2 | Create competence matrix + document credentials | 2026-03-15 | Dr. Islam Mekawy | **CLOSED (2026-02-09)** |
 | NC-002 | 8.2 | Execute fairness tests with demographic stratification | 2026-04-30 | Dr. Islam Mekawy |
 | NC-003 | Annex A | Implement automated drift detection with thresholds | 2026-05-31 | Dr. Islam Mekawy |
 

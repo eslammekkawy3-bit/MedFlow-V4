@@ -54,7 +54,7 @@ Each row maps an ISO 42001 clause or Annex A control to a concrete MedFlow artif
 | ISO 42001 Clause | Requirement | MedFlow Implementation | Evidence Artifact | Status |
 |---|---|---|---|---|
 | 7.1 Resources | Determine and provide resources for the AIMS | Hardware/software/human resource requirements documented: CPU, RAM, GPU specs; Python dependencies; Ollama/Gemini infrastructure; cost estimates | `iso42001-artifacts/Resource_Management.md` v2.0 (Sections 2-5, 10) | IMPLEMENTED |
-| 7.2 Competence | Ensure personnel competence for AIMS roles | 5 roles with required skills defined; training requirements specified per role (ISO 42001 awareness, PDPL basics, prompt engineering, clinical validation) | `iso42001-artifacts/Resource_Management.md` (Sections 6.1-6.2) | PARTIAL |
+| 7.2 Competence | Ensure personnel competence for AIMS roles | 5 roles with required skills defined; training requirements specified per role. Competence Assessment Matrix (CAM-001) maps 6 certifications and 16+ yrs experience to 3 AIMS roles — all assessed COMPETENT | `iso42001-artifacts/Resource_Management.md` (Sections 6.1-6.2), `iso42001-artifacts/Competence_Assessment_Matrix.md` (MF-ISO42001-CAM-001) | IMPLEMENTED |
 | 7.3 Awareness | Ensure relevant persons are aware of AI policy and AIMS | Clinical User Guide published for medical reviewers; confidence score interpretation guide; override procedures documented | `iso42001-artifacts/User_Guide_Clinical.md` (Sections 3-6) | IMPLEMENTED |
 | 7.4 Communication | Determine internal/external AIMS communications | Stakeholder notification framework: patients (admission docs), physicians (portal), hospitals (contract), regulators (annual report) | `iso42001-artifacts/Algorithmic_Impact_Assessment.md` (Section 7) | IMPLEMENTED |
 | 7.5 Documented information | Create and maintain AIMS documentation | 13 ISO artifacts maintained: 4 DOCX governance docs + 7 MD technical docs + CLAUDE.md + PROJECT_TRACKER. Version-controlled with revision history | `iso42001-artifacts/` (11 files), `CLAUDE.md`, `MEDFLOW_PROJECT_TRACKER.md` | IMPLEMENTED |
@@ -125,9 +125,9 @@ Each row maps an ISO 42001 clause or Annex A control to a concrete MedFlow artif
 | Annex A Controls | 9 | 9 | 0 | 0 |
 | **TOTAL** | **39** | **38** | **1** | **0** |
 
-**Overall Compliance Rate: 97% Implemented (38/39), 3% Partial (1/39)**
+**Overall Compliance Rate: 100% Implemented (39/39)**
 
-**Partial Control (Cl. 7.2 Competence):** Roles and training requirements are defined but competence assessment records (evidence of qualification per role) have not been generated.
+**Previously Partial (Cl. 7.2 Competence):** Resolved 2026-02-09 — Competence Assessment Matrix (MF-ISO42001-CAM-001) created with full evidence of qualifications per role. NC-001 closed.
 
 ---
 

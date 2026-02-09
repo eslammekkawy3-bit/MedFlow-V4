@@ -192,9 +192,11 @@ This document maintains a register of all improvements made to the MedFlow V3 AI
 | **Category** | Compliance (COMP) |
 | **Priority** | P2 - High |
 | **Source** | Internal Audit (NC-001, Clause 7.2) |
-| **Description** | Create formal competence matrix mapping roles to required qualifications. Document Lead Implementer credentials. |
-| **Target Date** | 2026-03-15 |
-| **Status** | PLANNED |
+| **Description** | Created formal competence matrix mapping 3 AIMS roles to required qualifications. Documented Lead Implementer credentials: 6 professional certifications (MSc, CPHIMS, CCDS, FLMI, Stanford AI, IFCE), 16+ years professional experience, and 64 hours ISO 42001 implementation training. |
+| **Benefit** | NC-001 formally closed. Clause 7.2 upgraded from PARTIAL to IMPLEMENTED (compliance now 100%). |
+| **Implemented** | 2026-02-09 (Session 12) |
+| **Evidence** | `iso42001-artifacts/Competence_Assessment_Matrix.md` (MF-ISO42001-CAM-001) |
+| **Status** | COMPLETED |
 
 ### IMP-012: Algorithmic Fairness Test Suite (NC-002)
 | Attribute | Detail |
@@ -237,19 +239,19 @@ This document maintains a register of all improvements made to the MedFlow V3 AI
 |----------|-----------|---------|-------|
 | Performance (PERF) | 1 | 0 | 1 |
 | Accuracy (ACCU) | 3 | 2 | 5 |
-| Compliance (COMP) | 2 | 1 | 3 |
+| Compliance (COMP) | 3 | 0 | 3 |
 | Reliability (RELI) | 3 | 1 | 4 |
 | Usability (USAB) | 1 | 0 | 1 |
-| **Total** | **10** | **4** | **14** |
+| **Total** | **11** | **3** | **14** |
 
 ### Priority Distribution (Completed)
 
 | Priority | Count | Percentage |
 |----------|-------|------------|
-| P1 - Critical | 2 | 20% |
-| P2 - High | 5 | 50% |
-| P3 - Medium | 2 | 20% |
-| P4 - Low | 1 | 10% |
+| P1 - Critical | 2 | 18% |
+| P2 - High | 6 | 55% |
+| P3 - Medium | 2 | 18% |
+| P4 - Low | 1 | 9% |
 
 ### Improvement Trend
 
@@ -261,6 +263,7 @@ This document maintains a register of all improvements made to the MedFlow V3 AI
 | Session 7 | 1 (IMP-005) | Accuracy |
 | Session 9 | 3 (IMP-007, 008, 009) | Reliability + Usability |
 | Session 10 | 1 (IMP-010) | Compliance |
+| Session 12 | 1 (IMP-011) | Compliance (NC-001 Closure) |
 
 ---
 
@@ -278,6 +281,7 @@ This document maintains a register of all improvements made to the MedFlow V3 AI
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2026-02-09 | Dr. Islam Mekawy | Initial continual improvement log (10 completed + 4 planned) |
+| 1.1 | 2026-02-09 | Dr. Islam Mekawy | IMP-011 completed (Competence Assessment Matrix, NC-001 closure) |
 
 ---
 

@@ -155,7 +155,7 @@ Identified during this review:
 
 | Action ID | Action | Owner | Due Date | Priority | Status |
 |-----------|--------|-------|----------|----------|--------|
-| MRA-001 | Create competence assessment matrix (NC-001) | Dr. Islam Mekawy | 2026-03-15 | High | OPEN |
+| MRA-001 | Create competence assessment matrix (NC-001) | Dr. Islam Mekawy | 2026-03-15 | High | **CLOSED (2026-02-09)** — CAM-001 created |
 | MRA-002 | Design and execute fairness test suite (NC-002) | Dr. Islam Mekawy | 2026-04-30 | High | OPEN |
 | MRA-003 | Implement automated drift detection (NC-003) | Dr. Islam Mekawy | 2026-05-31 | Medium | OPEN |
 | MRA-004 | Add ACS/Stroke/Sepsis protocols to KB (OBS-001) | Dr. Islam Mekawy | 2026-03-31 | Medium | OPEN |
