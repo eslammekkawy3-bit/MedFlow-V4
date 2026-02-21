@@ -1,12 +1,17 @@
 # Verification and Validation Plan
 ## MedFlow V3 Clinical Decision Support System
 
-**Document ID:** MF-ISO42001-A9-001
-**Version:** 2.0
-**Classification:** Internal
-**Last Updated:** 2026-02-07
-**Author:** MedFlow Development Team
-**ISO 42001 Reference:** Annex A.9 - AI System Verification and Validation
+**Document ID:** MF-ISO-18
+**Title:** Verification and Validation Plan
+**Version:** 2.1
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clause 8.5, Annex A.9 – AI System Verification and Validation
+**Supersedes:** MF-ISO42001-A9-001 v2.0 (2026-02-07)
 
 ---
 

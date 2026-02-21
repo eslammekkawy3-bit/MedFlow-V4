@@ -1,12 +1,17 @@
 # AI Risk Register
 ## MedFlow V3 Clinical Decision Support System
 
-**Document ID:** MF-ISO42001-A4-001
-**Version:** 5.0
-**Classification:** Internal
-**Last Updated:** 2026-02-16
-**Author:** MedFlow Development Team
-**ISO 42001 Reference:** Annex A.4 - AI System Risk Management
+**Document ID:** MF-ISO-05
+**Title:** AI Risk Register
+**Version:** 5.1
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clause 6.1, Annex A.4 – AI System Risk Management
+**Supersedes:** MF-ISO42001-A4-001 v5.0 (2026-02-16)
 
 ---
 
@@ -553,6 +558,7 @@ By Status:
 | 4.0 | 2026-02-07 | MedFlow Team | Phase 4: RISK-007 upgraded to MITIGATED (DRG Validator); RISK-003 latency note (data sovereignty trade-off); New RISK-015 (Conflicting AI Evidence) |
 | 5.0 | 2026-02-10 | Dr. Islam Mekawy | NC-005: RISK-005 status changed to REALIZED. New RISK-016 (Document Metadata Loss). Summary counts updated (16 total, 10 technical). |
 | 5.1 | 2026-02-16 | Dr. Islam Mekawy | NC-003 CLOSED: RISK-010 upgraded DOCUMENTED -> MITIGATED. RTRM v1.0.0 deployed (2-signal drift detection, 51-case gold standard, 11/11 tests PASS). Residual risk 6 -> 4 (MEDIUM -> LOW). |
+| 5.1 | 2026-02-21 | Dr. Islam Mekawy | Document control standardization: New ID MF-ISO-05, added reviewer/approver/status fields, aligned to MF-ISO-XX scheme for GitHub publication. |
 
 ---
 

@@ -1,12 +1,17 @@
 # Resource Management Plan
 ## MedFlow V3 Clinical Decision Support System
 
-**Document ID:** MF-ISO42001-A7-001
-**Version:** 2.0
-**Classification:** Internal
-**Last Updated:** 2026-02-07
-**Author:** MedFlow Development Team
-**ISO 42001 Reference:** Annex A.7 - Resources for AI Systems
+**Document ID:** MF-ISO-08
+**Title:** Resource Management Plan
+**Version:** 2.1
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clause 7.1, Annex A.7 – Resources for AI Systems
+**Supersedes:** MF-ISO42001-A7-001 v2.0 (2026-02-07)
 
 ---
 

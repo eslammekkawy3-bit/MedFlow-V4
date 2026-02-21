@@ -1,12 +1,17 @@
 # AI Data Policy
 ## MedFlow V3 Clinical Decision Support System
 
-**Document ID:** MF-ISO42001-A6-001
-**Version:** 1.0
-**Classification:** Internal
-**Last Updated:** 2026-02-04
-**Author:** MedFlow Development Team
-**ISO 42001 Reference:** Annex A.6 - Data for AI Systems
+**Document ID:** MF-ISO-06
+**Title:** AI Data Policy
+**Version:** 2.0
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clause 7.3, Annex A.6 – Data for AI Systems; PDPL Articles 6 & 9
+**Supersedes:** MF-ISO42001-A6-001 v1.0 (2026-02-04)
 
 ---
 

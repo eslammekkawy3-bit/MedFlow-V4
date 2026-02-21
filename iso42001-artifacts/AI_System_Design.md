@@ -1,12 +1,17 @@
 # AI System Design Document
 ## MedFlow V3 Clinical Decision Support System
 
-**Document ID:** MF-ISO42001-A5-001
-**Version:** 2.0
-**Classification:** Internal
-**Last Updated:** 2026-02-07
-**Author:** MedFlow Development Team
-**ISO 42001 Reference:** Annex A.5 - AI System Life Cycle
+**Document ID:** MF-ISO-07
+**Title:** AI System Design Document
+**Version:** 3.0
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clause 8.1, Clause 8.4, Annex A.5 – AI System Life Cycle
+**Supersedes:** MF-ISO42001-A5-001 v2.0 (2026-02-07)
 
 ---
 
@@ -331,14 +336,26 @@ MedFlow V3 employs a **Dual-Check Architecture** for clinical integrity:
 
 ---
 
-## 7. Version Control
+## 7. Version Control (Current Baseline — 2026-02-21)
 
-| Component | Version | Last Updated |
-|-----------|---------|--------------|
-| pii_scrubber.py | 2.1.0 | 2026-02-04 |
-| gemini_client.py | 1.0.0 | 2026-02-03 |
-| knowledge_base.py | 1.4.0 | 2026-02-04 |
-| cds_brain.py | 1.1.0 | 2026-02-04 |
+| Component | Version | Last Updated | Notes |
+|-----------|---------|--------------|-------|
+| pii_scrubber.py | 2.1.0 | 2026-02-04 | Layer 1 – JSON extraction strategy |
+| gemini_client.py | 2.0.0 | 2026-02-09 | CCAP Phase B – confidence calibration, few-shot |
+| knowledge_base.py | 1.4.0 | 2026-02-04 | Word boundary matching, STOP_WORDS |
+| knowledge_base_v2.py | 2.2.0 | 2026-02-18 | RAG Engine – 9,296 chunks, age filtering |
+| rag_ingestion.py | 1.2.0 | 2026-02-18 | ChromaDB indexer + population_type metadata |
+| cds_brain.py | 1.7.0 | 2026-02-18 | Full 6-layer orchestration + patent formula |
+| cds_brain_rag_integration.py | 1.2.0 | 2026-02-18 | RAG + patient age pass-through |
+| drg_validator.py | 1.1.0 | 2026-02-09 | Primary dx 2x weighting + upcoding detection |
+| ncebm_scorer.py | 1.2.0 | 2026-02-17 | Patent-aligned 6-dim weights |
+| documentation_quality_gate.py | 1.0.0 | 2026-02-17 | 960Z pre-emptive filter |
+| app.py | 2.0.0 | 2026-02-18 | Governance Cockpit UI |
+| dashboard_utils.py | 1.3.0 | 2026-02-09 | Error states, precise confidence |
+| terminology_system.py | 1.1.0 | 2026-02-09 | Threshold-aligned labels |
+| governance/governance_controller.py | 1.0.0 | 2026-02-16 | Pub/Sub event bus (25 types) |
+| governance/real_time_risk_monitor.py | 1.0.0 | 2026-02-16 | RTRM drift detection |
+| data/drg_clinical_rules.json | 1.1.0 | 2026-02-07 | 25 MDCs, severity markers |
 
 ---
 
@@ -346,9 +363,19 @@ MedFlow V3 employs a **Dual-Check Architecture** for clinical integrity:
 
 | Role | Name | Date | Signature |
 |------|------|------|-----------|
-| System Architect | _________________ | __________ | __________ |
-| AI Ethics Officer | _________________ | __________ | __________ |
-| Quality Assurance | _________________ | __________ | __________ |
+| System Architect | Dr. Islam Mekawy | 2026-02-21 | __________ |
+| AI Ethics Officer | Dr. Islam Mekawy | 2026-02-21 | __________ |
+| Quality Assurance | Dr. Islam Mekawy | 2026-02-21 | __________ |
+
+---
+
+## 9. Revision History
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | 2026-02-02 | MedFlow Team | Initial 4-layer pipeline architecture |
+| 2.0 | 2026-02-07 | MedFlow Team | Added DRG Validator (Layer 4), Dual-Check architecture |
+| 3.0 | 2026-02-21 | Dr. Islam Mekawy | Document control standardization (MF-ISO-07). Updated component versions to v4.0 governance baseline. Added RAG engine, governance layer, 960Z gate, patent confidence formula. New doc ID scheme applied. |
 
 ---
 

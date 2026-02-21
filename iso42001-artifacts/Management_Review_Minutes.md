@@ -1,12 +1,17 @@
 # Management Review Minutes
 ## MedFlow V3 Clinical Decision Support System
 
-**Document ID:** MF-ISO42001-MRM-001
-**Version:** 1.3
-**Classification:** Internal
-**Last Updated:** 2026-02-10
-**Author:** Dr. Islam Mekawy, Lead Implementer
-**ISO 42001 Reference:** Clause 9.3 - Management Review
+**Document ID:** MF-ISO-13
+**Title:** Management Review Minutes
+**Version:** 1.4
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clause 9.3 – Management Review
+**Supersedes:** MF-ISO42001-MRM-001 v1.3 (2026-02-10)
 
 ---
 

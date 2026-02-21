@@ -1,12 +1,17 @@
 # Algorithmic Impact Assessment
 ## MedFlow V3 Clinical Decision Support System
 
-**Document ID:** MF-ISO42001-AIA-001
-**Version:** 1.0
-**Classification:** Internal
-**Last Updated:** 2026-02-06
-**Author:** MedFlow Development Team
-**ISO 42001 Reference:** Annex A.5 - AI System Impact Assessment
+**Document ID:** MF-ISO-09
+**Title:** Algorithmic Impact Assessment
+**Version:** 1.1
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clause 8.2, Annex A.5 – AI System Impact Assessment
+**Supersedes:** MF-ISO42001-AIA-001 v1.0 (2026-02-06)
 
 ---
 
@@ -128,9 +133,9 @@ For each DRG category:
 **Fairness Metrics:**
 | Metric | Threshold | Status |
 |--------|-----------|--------|
-| Demographic Parity | <10% variance | PENDING VALIDATION |
-| Equal Opportunity | <15% FNR variance | PENDING VALIDATION |
-| Calibration | Within 5% across groups | PENDING VALIDATION |
+| Demographic Parity | <10% variance | **VALIDATED – 0.00% (MF-ISO-10 AFR-001)** |
+| Equal Opportunity | <15% FNR variance | **VALIDATED – 0.00% (MF-ISO-10 AFR-001)** |
+| Calibration | Within 5% across groups | **VALIDATED – 0.00% (MF-ISO-10 AFR-001)** |
 
 ---
 

@@ -1,13 +1,18 @@
 # Competence Assessment Matrix
 ## MedFlow V3 Clinical Decision Support System
 
-**Document ID:** MF-ISO42001-CAM-001
+**Document ID:** MF-ISO-11
+**Title:** Competence Assessment Matrix
 **Version:** 1.3
-**Classification:** Internal
-**Last Updated:** 2026-02-10
-**Author:** Dr. Islam Mekawy, Lead Implementer
-**ISO 42001 Reference:** Clause 7.2 - Competence
-**NC Reference:** NC-001 (Internal Audit Report MF-ISO42001-IAR-001)
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clause 7.2 – Competence
+**NC Reference:** NC-001 CLOSED (MF-ISO-12 Internal Audit Report)
+**Supersedes:** MF-ISO42001-CAM-001 v1.3 (2026-02-10)
 
 ---
 

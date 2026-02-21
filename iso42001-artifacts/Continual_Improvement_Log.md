@@ -1,12 +1,17 @@
 # Continual Improvement Log
 ## MedFlow V3 Clinical Decision Support System
 
-**Document ID:** MF-ISO42001-CIL-001
-**Version:** 1.4
-**Classification:** Internal
-**Last Updated:** 2026-02-10
-**Author:** Dr. Islam Mekawy, Lead Implementer
-**ISO 42001 Reference:** Clauses 10.1, 10.2 - Continual Improvement
+**Document ID:** MF-ISO-15
+**Title:** Continual Improvement Log
+**Version:** 1.5
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clauses 10.1, 10.2 – Continual Improvement & Corrective Action
+**Supersedes:** MF-ISO42001-CIL-001 v1.4 (2026-02-10)
 
 ---
 

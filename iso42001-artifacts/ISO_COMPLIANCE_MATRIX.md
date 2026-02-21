@@ -1,12 +1,18 @@
 # ISO/IEC 42001:2023 Compliance Matrix
 ## MedFlow V3 - AI Management System Implementation
 
-**Document ID:** MF-ISO42001-MATRIX-001
-**Version:** 1.4
-**Classification:** Internal
-**Date:** 2026-02-10
-**Author:** Dr. Islam Mekawy, Lead Implementer
+**Document ID:** MF-ISO-14
+**Title:** ISO/IEC 42001:2023 Compliance Matrix
+**Version:** 1.5
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** All Clauses (4–10) + Annex A + Annex B – Master Compliance Reference
 **Purpose:** Map MedFlow V3 implementation artifacts to ISO/IEC 42001:2023 requirements
+**Supersedes:** MF-ISO42001-MATRIX-001 v1.4 (2026-02-10)
 
 ---
 

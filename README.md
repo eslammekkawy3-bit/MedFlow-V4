@@ -1,296 +1,224 @@
-# MedFlow V3
+# MedFlow v4.0
 
-## ISO 42001-Compliant AI Governance Framework for Healthcare Insurance Decision Systems
+## ISO 42001-Compliant AI Governance Framework for Healthcare Insurance Decisions
 
-**Current Status:** Phase 3 Complete - Clinical Decision Support Operational
-**Version:** 1.5.0
-**Last Updated:** 2026-02-06
-
----
-
-## Overview
-
-MedFlow V3 is an AI-powered Clinical Decision Support (CDS) system designed for healthcare insurance decision-making in Saudi Arabia. It processes inpatient medical records, extracts clinical information, applies Saudi Ministry of Health (MOH) protocols, and provides evidence-based recommendations for continued hospitalization.
-
-### Key Capabilities
-
-- **Four-Layer Pipeline:** PII Scrubbing -> Clinical Analysis -> Guideline Enforcement -> Decision
-- **Defense in Depth PII:** Regex + Llama 3.2 (local) ensures no patient data reaches cloud
-- **MOH Protocol Compliance:** 13 Saudi MOH protocols with strict matching
-- **Self-Healing AI:** Auto-fallback when Gemini API encounters issues
-- **ISO 42001 Compliance:** Full audit trail and governance documentation
+**Lead Architect:** Dr. Islam Mekawy, MSc, CPHIMS, CCDS, FLMI
+**Jurisdiction:** Kingdom of Saudi Arabia
+**Patent Status:** SAIP Application Pending
+**Governance Phase:** v4.0 — Sprint 1+2+3 Complete | All 5 Non-Conformances Closed
+**Professional Hours:** 114 hours across 22 sessions (IEL v2.0)
 
 ---
 
-## Current Status
+## Executive Summary
 
-| Component | Version | Status |
-|-----------|---------|--------|
-| PII Scrubber | 2.1.0 | Operational (Extraction Strategy) |
-| Knowledge Base | 1.4.0 | Operational (Word Boundary Matching) |
-| Gemini Client | 1.0.0 | Operational (Auto-Fallback) |
-| CDS Brain | 1.1.0 | Operational (General Fallback) |
-| Test Suite | All Pass | 6/6 strict matching tests |
+MedFlow v4.0 is a sovereign, ISO 42001-aligned Clinical Decision Support (CDS) system engineered for healthcare insurance prior-authorization in Saudi Arabia. It processes inpatient medical records, enforces Saudi Ministry of Health (MOH) clinical protocols, and generates audit-ready decisions with full regulatory traceability.
 
----
+### Three Strategic Pillars
 
-## Quick Start
+**1. Knowledge Sovereignty**
+Saudi MOH protocols receive a 3x retrieval weight over international guidelines (WHO, NICE). The system enforces the Saudi clinical evidence hierarchy at the algorithm level, not merely at the policy level. Retrieval is powered by a local semantic engine (nomic-embed-text-v1.5) running entirely on-premises.
 
-### Prerequisites
+**2. PDPL-Compliant Privacy Architecture**
+All Protected Health Information (PHI) is scrubbed locally before any data leaves the network. Llama 3.2 (via Ollama) performs name and institution extraction on-device. Regex patterns handle structured identifiers (MRN, National ID, IQAMA, phone, DOB). Zero patient data reaches external cloud APIs.
 
-- Python 3.10+
-- 16GB RAM (32GB recommended)
-- Ollama with Llama 3.2 model
-- Google Gemini API key
-
-### Installation
-
-```bash
-# Navigate to project
-cd "C:\Medflow Master Brain"
-
-# Activate virtual environment
-.\venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux/Mac
-
-# Install dependencies
-pip install google-generativeai pypdf pdfplumber
-
-# Configure API key
-# Edit .env and add: GEMINI_API_KEY=your_key_here
-```
-
-### Verify Installation
-
-```bash
-# Full system health check
-python cds_brain.py --health
-
-# Run strict matching test suite
-python knowledge_base.py --test-strict
-
-# Test PII scrubber
-python pii_scrubber.py --text "Patient Ahmed, MRN-123456, phone +966 55 123 4567"
-```
+**3. Preemptive NPHIES 960Z Auditing**
+Before a claim decision is issued, the system applies a six-element documentation quality gate aligned to NPHIES 960Z rejection criteria. Claims missing primary ICD-10 codes, medication dosages, lab results, or radiology interpretations receive a WARNING or FAIL grade — blocking submission before the insurer rejects it. This reduces 960Z rejection risk at the point of care.
 
 ---
 
-## CLI Commands
-
-### CDS Brain (Main Orchestrator)
-
-```bash
-# Health check
-python cds_brain.py --health
-
-# Analyze text
-python cds_brain.py --text "Patient admitted with chest pain..."
-
-# Analyze files
-python cds_brain.py --files "report_day1.json" "report_day3.json" --output result.json
-
-# Disable LLM PII scrubbing (regex only, faster)
-python cds_brain.py --no-llm-scrub --text "..."
-```
-
-### Knowledge Base
-
-```bash
-# List all loaded protocols
-python knowledge_base.py --list
-
-# Show statistics
-python knowledge_base.py --stats
-
-# Search for protocols
-python knowledge_base.py --search "Diabetic Ketoacidosis"
-
-# Test strict matching (with reference)
-python knowledge_base.py --reference "Acute Ischemic Stroke"
-
-# Debug mode (shows matching decisions)
-python knowledge_base.py --reference "Stroke" --debug
-
-# Run automated test suite
-python knowledge_base.py --test-strict
-```
-
-### PII Scrubber
-
-```bash
-# Test with text
-python pii_scrubber.py --text "Patient Ahmed, MRN-123456"
-
-# Test with file
-python pii_scrubber.py --file document.txt
-
-# Regex-only mode (faster)
-python pii_scrubber.py --no-llm --text "..."
-
-# Check Ollama status
-python pii_scrubber.py --check
-```
-
-### Utilities
-
-```bash
-# List available Gemini models
-python check_models.py
-
-# Generate synthetic test cases
-python synthetic_data.py --output ./sample_cases --simple 10 --medium 5 --complex 5
-```
-
----
-
-## Folder Structure
+## System Architecture: 6-Layer Governance Defense
 
 ```
-C:\Medflow Master Brain\
-│
-├── Core Modules
-│   ├── cds_brain.py             # Main orchestrator (v1.1.0)
-│   ├── knowledge_base.py        # MOH Protocol loader (v1.4.0)
-│   ├── gemini_client.py         # Gemini API client (v1.0.0)
-│   ├── pii_scrubber.py          # PII removal (v2.1.0)
-│   └── check_models.py          # Gemini model utility
-│
-├── Configuration
-│   ├── .env                     # API keys and settings
-│   ├── config.py                # Application configuration
-│   └── requirements.txt         # Python dependencies
-│
-├── Documentation
-│   ├── README.md                # This file
-│   ├── CLAUDE.md                # AI assistant instructions
-│   ├── MEDFLOW_PROJECT_TRACKER.md # Development tracker
-│   ├── PHASE3_ARCHITECTURE.md   # Technical blueprint
-│   └── OLLAMA_SETUP.md          # Local LLM setup guide
-│
-├── ISO 42001 Compliance
-│   └── iso42001-artifacts/
-│       ├── AI_Risk_Register.md           # A.4 - Risk management (v3.0, 14 risks)
-│       ├── AI_System_Design.md           # A.5 - Architecture
-│       ├── Algorithmic_Impact_Assessment.md  # A.5 - Impact assessment
-│       ├── AI_Data_Policy.md             # A.6 - Data governance
-│       ├── Resource_Management.md        # A.7 - Resources
-│       ├── Verification_Validation_Plan.md   # A.9 - V&V
-│       ├── User_Guide_Clinical.md        # Clinical user guide
-│       └── *.docx                        # Original ISO documents
-│
-├── Knowledge Base
-│   └── knowledge-base.moh_protocols/  # 13 MOH Protocol PDFs
-│
-├── Test Data
-│   └── sample_cases/            # 20 synthetic test cases
-│       ├── simple/
-│       ├── medium/
-│       └── complex/
-│
-├── Output & Logs
-│   ├── output/                  # Case analysis results
-│   ├── logs/                    # Execution logs
-│   └── backups/                 # Configuration backups
-│
-└── Development
-    ├── tests/                   # Unit test files
-    ├── data/                    # Static data files
-    └── venv/                    # Python virtual environment
-```
+INPUT: Inpatient Medical Records (PDF / DOCX / JSON)
+       1-10 files per case, multi-day clinical episodes
 
----
-
-## Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  LAYER 1: PII SCRUBBING (pii_scrubber.py v2.1.0)               │
-│  Regex (L1) + Llama 3.2 JSON Extraction (L2) + Validation (L3) │
-│  All processing LOCAL - PDPL compliant                          │
-└─────────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────────┐
-│  LAYER 2: CLINICAL ANALYSIS (gemini_client.py v1.0.0)          │
-│  Gemini 2.0/2.5 Flash with auto-fallback                        │
-│  Summary → Timeline → Decision                                  │
-└─────────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────────┐
-│  LAYER 3: GUIDELINE ENFORCEMENT (knowledge_base.py v1.4.0)     │
-│  13 MOH Protocols + Strict Word Boundary Matching               │
-│  Fallback: General Clinical Standards                           │
-└─────────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────────┐
-│  LAYER 4: ORCHESTRATION (cds_brain.py v1.1.0)                  │
-│  Pipeline coordination + Confidence scoring + Review levels     │
-└─────────────────────────────────────────────────────────────────┘
++==================================================================+
+| LAYER 1 — PII SCRUBBING (pii_scrubber.py v2.1.0)                |
+|   Regex patterns: National ID, IQAMA, MRN, Phone, DOB, Email    |
+|   Llama 3.2 (local): Names, Hospital names, Addresses           |
+|   Validation pass: Leak detection before any external call       |
+|   Zero patient data exits the local network                      |
++==================================================================+
+                              |
++==================================================================+
+| LAYER 2 — SEMANTIC RAG RETRIEVAL (knowledge_base_v2.py v2.2.0)  |
+|   9,296 indexed chunks across 126 MOH protocol PDFs             |
+|   Tier 1: Saudi MOH Protocols    (3.0x retrieval weight)        |
+|   Tier 2: International (WHO / NICE)  (1.0x x NCEBM score)      |
+|   Population filtering: pediatric/neonatal chunks excluded       |
+|   for adult patients (age >= 18)                                 |
+|   16,000-token hard budget | Local embeddings | Privacy-first    |
++==================================================================+
+                              |
++==================================================================+
+| LAYER 3 — NCEBM HIERARCHICAL JUDGE (ncebm_scorer.py v1.2.0)     |
+|   6-dimension quality scoring per patent Section 3.2:            |
+|     Evidence Grade (25pts) | Methodology (20pts)                 |
+|     Applicability (15pts) | Governance (20pts)                   |
+|     Currency (5pts) | Patient-Centeredness (15pts)               |
+|   Score < 60: rejected at ingestion. Saudi Context: 0-15pts.    |
++==================================================================+
+                              |
++==================================================================+
+| LAYER 4 — CLINICAL ANALYSIS (gemini_client.py v2.0.0)           |
+|   Gemini 2.0/2.5 Flash (auto-fallback on 429/404)               |
+|   Full 1M-token context: no truncation                           |
+|   5-tier confidence calibration | Few-shot gold examples         |
+|   DRG context injected into decision prompt                      |
++==================================================================+
+                              |
++==================================================================+
+| LAYER 5 — DRG CLINICAL VALIDATION (drg_validator.py v1.1.0)     |
+|   Saudi AR-DRG v9.0 MDC prediction (25 categories)              |
+|   Severity Level A / B / C assessment                            |
+|   Primary diagnosis 2x keyword weighting                        |
+|   Upcoding & undercoding risk detection                          |
+|   960Z Pre-emptive Gate: 6 mandatory documentation elements      |
++==================================================================+
+                              |
++==================================================================+
+| LAYER 6 — GOVERNANCE AUDIT TRAIL (cds_brain.py v1.7.0)          |
+|   Patent Confidence Formula:                                     |
+|     (Evidence Strength x Documentation Completeness              |
+|      x Protocol Alignment) / 3                                   |
+|   Structured per-layer audit: action, status, duration_ms        |
+|   Regulatory Compliance: PDPL / NPHIES / ISO 42001 status       |
+|   Provenance: all decisions traceable to MOH/CHI/NCEBM sources  |
++==================================================================+
+                              |
+OUTPUT: JSON decision record with recommendation, confidence,
+        DRG classification, audit trail, regulatory status
+        + Streamlit Governance Cockpit visualization
 ```
 
 ---
 
 ## ISO 42001 Compliance
 
-MedFlow implements ISO 42001 controls with full documentation:
+MedFlow v4.0 was developed as a primary ISO 42001 Lead Implementer demonstration project. All development activity is documented to ISO 42001 evidence standards.
 
-| Control | Document | Status |
-|---------|----------|--------|
-| A.4 | AI_Risk_Register.md (v3.0) | 14 risks (8 technical + 6 strategic), 9 mitigated |
-| A.5 | AI_System_Design.md | 4-layer architecture documented |
-| A.5 | Algorithmic_Impact_Assessment.md | Patient safety, fairness, human oversight |
-| A.6 | AI_Data_Policy.md | PDPL, data minimization |
-| A.7 | Resource_Management.md | HW/SW requirements |
-| A.9 | Verification_Validation_Plan.md | Automated test suites |
-| UG | User_Guide_Clinical.md | Doctor instructions, confidence scores |
+| Metric | Value |
+|--------|-------|
+| Controls Implemented | 39 / 39 (100%) |
+| Non-Conformances | 5 / 5 CLOSED |
+| Professional Hours | 114 hrs (IEL v2.0) |
+| Working Days | 15 |
+| Internal Audit | Passed (97% conformance, IAR v1.5) |
+| Risk Register | 16 risks, RISK-010 MITIGATED |
 
----
+### ISO Artifact Inventory
 
-## Saudi Healthcare Standards
-
-- **MOH Protocols:** 13 Ministry of Health clinical guidelines
-- **PDPL Compliance:** All PII processed locally via Ollama
-- **NPHIES Ready:** Designed for integration
-- **Guideline Hierarchy:** MOH -> UpToDate -> General Clinical Reasoning
-
----
-
-## Technical Decisions
-
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| Local LLM | Llama 3.2 via Ollama | Data sovereignty, PDPL compliance |
-| Cloud LLM | Gemini 2.0 Flash | Fast, reliable API |
-| PII Strategy | Extraction (not Rewriting) | Prevents hallucination, 3-5x faster |
-| Protocol Matching | Word Boundary Regex | Prevents "mi" matching "hypoglycemia" |
-| Medical Focus | Medical Necessity | NOT insurance coverage |
+| Document | Version | Status |
+|----------|---------|--------|
+| [Statement of Applicability](iso42001-artifacts/Statement_of_Applicability.md) | v1.0 | Current |
+| [AI Risk Register](iso42001-artifacts/AI_Risk_Register.md) | v5.1 | 16 risks |
+| [Internal Audit Report](iso42001-artifacts/Internal_Audit_Report.md) | v1.5 | 5/5 NCs Closed |
+| [ISO Compliance Matrix](iso42001-artifacts/ISO_COMPLIANCE_MATRIX.md) | v1.5 | 39/39 Implemented |
+| [Algorithmic Fairness Report](iso42001-artifacts/Algorithmic_Fairness_Report.md) | v1.0 | 24/24 Metrics Pass |
+| [Implementation Experience Log](iso42001-artifacts/Implementation_Experience_Log.md) | v2.0 | 114 hrs |
+| [Management Review Minutes](iso42001-artifacts/Management_Review_Minutes.md) | v1.4 | Q1 2026 |
+| [Continual Improvement Log](iso42001-artifacts/Continual_Improvement_Log.md) | v1.5 | 15 Completed |
+| [Competence Assessment Matrix](iso42001-artifacts/Competence_Assessment_Matrix.md) | v1.3 | NC-001 Closed |
+| [Algorithmic Impact Assessment](iso42001-artifacts/Algorithmic_Impact_Assessment.md) | v1.0 | Patient Safety |
+| [Verification & Validation Plan](iso42001-artifacts/Verification_Validation_Plan.md) | v1.0 | Current |
+| [AI Data Policy](iso42001-artifacts/AI_Data_Policy.md) | v1.0 | PDPL Aligned |
 
 ---
 
-## Known Limitations
+## v4.0 Governance Layer
 
-- No Stroke/ACS/Sepsis protocols in knowledge base (user to add)
-- English language only
-- Requires Ollama running locally for PII scrubbing
-- Internet connection required for Gemini API
+The governance layer implements an event-driven pub/sub architecture replacing monolithic audit logging.
 
----
+```
+governance/
+  governance_controller.py   # Pub/Sub event bus (25 event types, RLock, JSONL persistence)
+  events.py                  # Typed event schemas + factory helpers
+  real_time_risk_monitor.py  # RTRM: 2-signal drift detection, 100-event rolling window
+```
 
-## Performance
-
-| Metric | Current | Target |
-|--------|---------|--------|
-| PII Scrubbing | ~1-2 min/case | < 30 sec (with optimization) |
-| Full Pipeline | ~2-3 min/case | < 1 min |
-| Strict Match Accuracy | 100% (6/6 tests) | 100% |
-
----
-
-## Contact
-
-**Lead Researcher & Architect:** Dr. Islam Mekawy
-**Project Type:** Personal Research Initiative (Non-Commercial)
-**Location:** Saudi Arabia
+**Real-Time Risk Monitor (RTRM):**
+- Subscribes to DECISION_COMPLETE events via the governance event bus
+- Signal 1: Confidence score distribution drift (baseline vs. rolling 100-event window)
+- Signal 2: Recommendation distribution drift (EXTENSION/DISCHARGE/HOME_CARE/ESCALATE ratios)
+- Threshold: >10% shift in any metric triggers RISK_DRIFT_DETECTED event
+- Validated: 11/11 tests pass against 51-case gold standard dataset
 
 ---
 
+## Algorithmic Fairness Validation
+
+Counterfactual fairness testing per ISO 42001 Clause 8.2 (NC-002 Closed):
+
+| Fairness Metric | Threshold | Observed Variance | Result |
+|----------------|-----------|-------------------|--------|
+| Demographic Parity | < 10% | 0.00% | PASS |
+| Calibration Parity | < 5% | 0.00% | PASS |
+| Review Level Parity | < 10% | 0.00% | PASS |
+| Equal Opportunity | < 15% | 0.00% | PASS |
+
+Test matrix: 4 diagnoses x 2 genders x 2 age groups x 2 replicas = 32 cases.
+Diagnosis-held-constant, demographics varied. Evidence: [AFR-001](iso42001-artifacts/Algorithmic_Fairness_Report.md).
+
+---
+
+## Data Disclaimer
+
+**All patient data used in demonstrations, testing, and validation is 100% synthetically generated.**
+
+The `synthetic_data.py` V3.0 Clinical Simulation Engine generates clinically realistic but entirely fictitious patient cases using arc-based vitals curves, lab kinetics models, and medication state machines. No real patient records were used at any stage of development.
+
+This design complies with the Saudi Personal Data Protection Law (PDPL) by ensuring zero exposure of identifiable health information in the research and validation pipeline.
+
+---
+
+## Proprietary Core
+
+The mathematical weighting logic, 960Z extraction rules, and NCEBM dimension scoring algorithms are subject to an active SAIP patent application and are not included in this public repository. See [PROPRIETARY_CORE_ALGORITHM.md](PROPRIETARY_CORE_ALGORITHM.md).
+
+---
+
+## Quick Start
+
+```bash
+# Prerequisites: Python 3.10+, Ollama with Llama 3.2, Gemini API key
+
+# 1. Clone and configure
+git clone <repo>
+cd medflow
+cp .env.example .env      # Add GEMINI_API_KEY
+
+# 2. Install dependencies
+pip install google-generativeai pypdf pdfplumber streamlit plotly pandas python-dotenv
+pip install chromadb sentence-transformers==2.7.0 tiktoken einops
+
+# 3. Launch Governance Cockpit
+streamlit run app.py
+
+# 4. Health check
+python cds_brain.py --health
+
+# 5. Run validation suites
+python drg_validator.py --test                   # 8/8
+python documentation_quality_gate.py --test      # 5/5
+python test_rtrm.py                              # 11/11
+```
+
+---
+
+## Technical Stack
+
+| Component | Technology | Rationale |
+|-----------|------------|-----------|
+| Privacy Layer | Llama 3.2 via Ollama | Data sovereignty, on-premises only |
+| Clinical AI | Gemini 2.0/2.5 Flash | 1M token context, auto-fallback |
+| RAG Embeddings | nomic-embed-text-v1.5 | Local, privacy-preserving |
+| Vector Store | ChromaDB | On-premises semantic retrieval |
+| Dashboard | Streamlit | Rapid clinical UI deployment |
+| Governance | Python threading (RLock) | Thread-safe event bus |
+| Standards | ISO 42001, Saudi PDPL, NPHIES | Regulatory alignment |
+
+---
+
+*Personal Research Initiative — Dr. Islam Mekawy — Saudi Arabia, 2026*
 *Built with ISO 42001 compliance from day 1*

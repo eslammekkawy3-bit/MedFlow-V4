@@ -1,15 +1,62 @@
-# Environment & secrets
+# ── Security & IP Protection ──────────────────────────────────────────────────
 .env
+*.key
+.claude/
+OllamaSetup/
+OllamaSetup.exe
+SAIP/
+
+# ── Virtual Environments & Build Cache ────────────────────────────────────────
 venv/
 __pycache__/
+.pytest_cache/
+.streamlit/
 
-# IDE
-.claude/
+# ── Databases & Heavy Data ────────────────────────────────────────────────────
+chroma_db/
+chroma_db_backup_*/
+data/
+drg data/
+synthetic_data/
 
-# Build artifacts
-*.exe
-*.zip
-nul
-
-# Large binary directories
+# ── Knowledge Base PDFs (Large Binary / Copyrighted) ──────────────────────────
 knowledge-base.moh_protocols/
+knowledge-base.international/
+NCEBM/
+
+# ── Logs, Outputs & Draft Folders ─────────────────────────────────────────────
+logs/
+audit_logs/
+output/
+outputs/
+portfolio/
+regulatory-package/
+iso study material/
+backups/
+docs/
+sdaia-sandbox/
+
+# ── Test Episodes, Scratch & Generated Case Data ──────────────────────────────
+test_episode*/
+masterpiece_case/
+fairness_cases/
+sample_cases/
+gold_standard/cases/
+complex_test_case.txt
+
+# ── Messy Test Scripts & Backups ──────────────────────────────────────────────
+test_*.py
+masterpiece.py
+fairness_test.py
+PHASE.txt
+PHASE*.md
+
+# ── Miscellaneous Artifacts ────────────────────────────────────────────────────
+*.zip
+*.exe
+nul
+masterpiece_rag_validation.json
+create_international_pdfs.py
+generate_iso_docs.py
+silent_clean.py
+maintenance.py

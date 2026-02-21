@@ -1,10 +1,18 @@
 # Clinical User Guide
 ## MedFlow V3 - For Medical Reviewers
 
-**Document ID:** MF-UG-CLINICAL-001
-**Version:** 1.0
-**Last Updated:** 2026-02-06
+**Document ID:** MF-ISO-17
+**Title:** Clinical User Guide
+**Version:** 1.1
+**Status:** ACTIVE
+**Date:** 2026-02-21
+**Author:** Dr. Islam Mekawy
+**Reviewer:** Dr. Islam Mekawy (Lead Researcher)
+**Approver:** Dr. Islam Mekawy (AI Governance Lead)
+**Classification:** CONFIDENTIAL – Internal Use Only
+**ISO 42001 Clause:** Clause 7.3, Clause 8.3 – Awareness & AI System Operations
 **Audience:** Medical Reviewers, Physicians, Clinical Validators
+**Supersedes:** MF-UG-CLINICAL-001 v1.0 (2026-02-06)
 
 ---
 
