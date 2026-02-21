@@ -39,3 +39,21 @@ regulatory-package/
 
 # ── Ignore Patent Claims ───────────────────────────────────────────────────────
 SAIP/
+
+# ── Ignore Miscellaneous Local Files ──────────────────────────────────────────
+*.zip
+*.exe
+*.txt
+*.json
+nul
+docs/
+knowledge-base.moh_protocols/
+knowledge-base.international/
+CLAUDE.md
+MEDFLOW_PROJECT_TRACKER.md
+MEDFLOW_STRATEGIC_ROADMAP.md
+STANDARDIZATION_PLAN.md
+PHASE*.md
+PHASE*.txt
+iso42001-artifacts/temp_extract/
+requirements.txt

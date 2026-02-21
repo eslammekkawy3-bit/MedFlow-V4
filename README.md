@@ -174,7 +174,7 @@ This design complies with the Saudi Personal Data Protection Law (PDPL) by ensur
 
 ## Proprietary Core
 
-The mathematical weighting logic, 960Z extraction rules, and NCEBM dimension scoring algorithms are subject to an active SAIP patent application and are not included in this public repository. See [PROPRIETARY_CORE_ALGORITHM.md](PROPRIETARY_CORE_ALGORITHM.md).
+The mathematical weighting logic, 960Z extraction rules, and NCEBM dimension scoring algorithms are subject to an active SAIP patent application and are not included in this public repository.
 
 ---
 
@@ -222,3 +222,12 @@ python test_rtrm.py                              # 11/11
 
 *Personal Research Initiative — Dr. Islam Mekawy — Saudi Arabia, 2026*
 *Built with ISO 42001 compliance from day 1*
+
+---
+
+## Contact & Lead Architect
+
+* **Name:** Dr. Islam Mekawy, MSc, CPHIMS, CCDS, FLMI
+* **Email:** [TYPE YOUR EMAIL HERE]
+* **LinkedIn:** [TYPE YOUR LINKEDIN URL HERE]
+* **Phone/WhatsApp:** [TYPE YOUR PHONE NUMBER HERE]
