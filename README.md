@@ -228,6 +228,6 @@ python test_rtrm.py                              # 11/11
 ## Contact & Lead Architect
 
 * **Name:** Dr. Islam Mekawy, MSc, CPHIMS, CCDS, FLMI
-* **Email:** [TYPE YOUR EMAIL HERE]
-* **LinkedIn:** [TYPE YOUR LINKEDIN URL HERE]
-* **Phone/WhatsApp:** [TYPE YOUR PHONE NUMBER HERE]
+* **Email:** eslammekkawy3@gmail.com
+* **LinkedIn:** https://www.linkedin.com/in/islam-mekawy-624b5b194/
+* **Phone/WhatsApp:** +966567054862
