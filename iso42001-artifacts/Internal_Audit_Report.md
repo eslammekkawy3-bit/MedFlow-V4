@@ -37,7 +37,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 
 ## 2. 🔍 Audit Scope and Methodology
 
-### 2.1 Audit Scope
+### <font color="#58a6ff">2.1 Audit Scope</font>
 
 | Attribute | Detail |
 |-----------|--------|
@@ -47,7 +47,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Modules in Scope** | pii_scrubber, knowledge_base, gemini_client, cds_brain, drg_validator, app, dashboard_utils, terminology_system |
 | **Exclusions** | None — full scope audit |
 
-### 2.2 Audit Criteria
+### <font color="#58a6ff">2.2 Audit Criteria</font>
 
 - ISO/IEC 42001:2023 — Artificial Intelligence Management System Requirements
 - MedFlow V3 AI Policy (MF-ISO42001-A4-002)
@@ -55,7 +55,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 - Saudi PDPL (Personal Data Protection Law) requirements
 - MOH Clinical Protocol Guidelines
 
-### 2.3 Audit Methodology
+### <font color="#58a6ff">2.3 Audit Methodology</font>
 
 | Method | Application |
 |--------|-------------|
@@ -65,7 +65,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Configuration Audit** | .env, config.py, .streamlit/config.toml verification |
 | **Output Sampling** | Review of 5 saved case analysis results in output/ |
 
-### 2.4 Audit Team
+### <font color="#58a6ff">2.4 Audit Team</font>
 
 | Role | Name | Qualifications |
 |------|------|----------------|
@@ -75,7 +75,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 
 ## 3. 📊 Audit Findings Summary
 
-### 3.1 Overall Results
+### <font color="#58a6ff">3.1 Overall Results</font>
 
 | Category | Count |
 |----------|-------|
@@ -85,7 +85,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Major Non-conformances** | 2 — NC-004 ![CLOSED](https://img.shields.io/badge/CLOSED-2ea44f?style=flat-square) &nbsp; NC-005 ![CLOSED](https://img.shields.io/badge/CLOSED-2ea44f?style=flat-square) |
 | **Observations / Opportunities for Improvement** | 3 |
 
-### 3.2 Compliance by Clause
+### <font color="#58a6ff">3.2 Compliance by Clause</font>
 
 | Clause | Title | Controls | Conformant | Non-conformant | Rating |
 |--------|-------|:--------:|:----------:|:--------------:|:------:|
@@ -104,9 +104,9 @@ This document records the findings of the first internal audit of the MedFlow V3
 
 ## 4. 🔬 Detailed Findings
 
-### 4.1 Conformance Findings
+### <font color="#58a6ff">4.1 Conformance Findings</font>
 
-#### AUDIT-001: Context and Scope Definition
+#### <font color="#58a6ff">AUDIT-001: Context and Scope Definition</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 4.1, 4.2, 4.3, 4.4 |
@@ -114,7 +114,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Evidence** | iso42001-artifacts/AIMS_Scope.docx, CLAUDE.md (Project Overview section) |
 | **Type** | Conformance |
 
-#### AUDIT-002: Leadership and AI Policy
+#### <font color="#58a6ff">AUDIT-002: Leadership and AI Policy</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 5.1, 5.2, 5.3 |
@@ -122,7 +122,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Evidence** | iso42001-artifacts/AI_Policy.docx, iso42001-artifacts/Roles_Responsibilities.docx |
 | **Type** | Conformance |
 
-#### AUDIT-003: Risk Assessment and Treatment
+#### <font color="#58a6ff">AUDIT-003: Risk Assessment and Treatment</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 6.1, 6.2 |
@@ -130,7 +130,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Evidence** | iso42001-artifacts/AI_Risk_Register.md (v3.0, 14 risks) |
 | **Type** | Conformance |
 
-#### AUDIT-004: AI Objectives and Planning
+#### <font color="#58a6ff">AUDIT-004: AI Objectives and Planning</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 6.3, 6.4, 6.5 |
@@ -138,7 +138,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Evidence** | iso42001-artifacts/AI_Objectives.docx, MEDFLOW_PROJECT_TRACKER.md |
 | **Type** | Conformance |
 
-#### AUDIT-005: Data Management
+#### <font color="#58a6ff">AUDIT-005: Data Management</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 7.3, 7.4, 7.5 |
@@ -146,7 +146,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Evidence** | iso42001-artifacts/AI_Data_Policy.md, pii_scrubber.py (v2.1.0) |
 | **Type** | Conformance |
 
-#### AUDIT-006: Operational Controls
+#### <font color="#58a6ff">AUDIT-006: Operational Controls</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 8.1, 8.3, 8.4, 8.5, 8.6 |
@@ -154,7 +154,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Evidence** | cds_brain.py, gemini_client.py, knowledge_base.py, drg_validator.py |
 | **Type** | Conformance |
 
-#### AUDIT-007: Verification and Validation
+#### <font color="#58a6ff">AUDIT-007: Verification and Validation</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 8.5, Annex A (Testing) |
@@ -162,7 +162,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Evidence** | iso42001-artifacts/Verification_Validation_Plan.md, drg_validator.py --test, knowledge_base.py --test-strict |
 | **Type** | Conformance |
 
-#### AUDIT-008: Performance Monitoring
+#### <font color="#58a6ff">AUDIT-008: Performance Monitoring</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 9.1, 9.2, 9.3 |
@@ -170,7 +170,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Evidence** | dashboard_utils.py (render_pii_audit, render_processing_audit), MEDFLOW_PROJECT_TRACKER.md |
 | **Type** | Conformance |
 
-#### AUDIT-009: Improvement Process
+#### <font color="#58a6ff">AUDIT-009: Improvement Process</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 10.1, 10.2 |
@@ -180,9 +180,9 @@ This document records the findings of the first internal audit of the MedFlow V3
 
 ---
 
-### 4.2 Non-conformance Findings
+### <font color="#58a6ff">4.2 Non-conformance Findings</font>
 
-#### NC-001: Competence Assessment Records Missing
+#### <font color="#58a6ff">NC-001: Competence Assessment Records Missing</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 7.2 — Competence |
@@ -195,7 +195,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Closure Date** | 2026-02-09 |
 | **Status** | ![CLOSED](https://img.shields.io/badge/CLOSED-2ea44f?style=flat-square) |
 
-#### NC-002: Algorithmic Fairness Validation Not Executed
+#### <font color="#58a6ff">NC-002: Algorithmic Fairness Validation Not Executed</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 8.2 — AI Impact Assessment (Fairness) |
@@ -208,7 +208,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Closure Date** | 2026-02-10 |
 | **Status** | ![CLOSED](https://img.shields.io/badge/CLOSED-2ea44f?style=flat-square) |
 
-#### NC-003: Automated Drift Detection Not Implemented
+#### <font color="#58a6ff">NC-003: Automated Drift Detection Not Implemented</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | Annex A — AI System Monitoring |
@@ -221,7 +221,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Closure Date** | 2026-02-16 |
 | **Status** | ![CLOSED](https://img.shields.io/badge/CLOSED-2ea44f?style=flat-square) |
 
-#### NC-004: Clinical Output Validity — Synthetic Data & Pipeline
+#### <font color="#58a6ff">NC-004: Clinical Output Validity — Synthetic Data & Pipeline</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 8.4 — AI System Testing; 8.2 — AI Impact Assessment |
@@ -234,7 +234,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Closure Date** | 2026-02-10 |
 | **Status** | ![CLOSED](https://img.shields.io/badge/CLOSED-2ea44f?style=flat-square) |
 
-#### NC-005: Clinical Logic Failure & Timeline Inconsistency
+#### <font color="#58a6ff">NC-005: Clinical Logic Failure & Timeline Inconsistency</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Clause** | 8.1 — Operational Planning and Control; 8.4 — AI System Testing |
@@ -249,23 +249,23 @@ This document records the findings of the first internal audit of the MedFlow V3
 
 ---
 
-### 4.3 Observations (Opportunities for Improvement)
+### <font color="#58a6ff">4.3 Observations (Opportunities for Improvement)</font>
 
-#### OBS-001: Knowledge Base Protocol Coverage
+#### <font color="#58a6ff">OBS-001: Knowledge Base Protocol Coverage</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Area** | Knowledge Base |
 | **Observation** | 13 MOH protocols loaded, but critical clinical areas (ACS/STEMI, Stroke, Sepsis) lack dedicated protocols. System correctly falls back to "General Clinical Reasoning" but this reduces citation specificity. |
 | **Recommendation** | Add ACS/STEMI, Stroke Management, and Sepsis protocols when available. |
 
-#### OBS-002: PII Scrubber Performance
+#### <font color="#58a6ff">OBS-002: PII Scrubber Performance</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Area** | PII Scrubbing |
 | **Observation** | Extraction strategy (v2.1.0) provides 3–5x improvement, but actual measured performance data has not been formally captured. Baseline vs. optimized comparison is anecdotal. |
 | **Recommendation** | Run controlled performance benchmark: 10 cases before/after, record mean processing time. |
 
-#### OBS-003: Phase 5.5 Terminology Standardization Incomplete
+#### <font color="#58a6ff">OBS-003: Phase 5.5 Terminology Standardization Incomplete</font>
 | Attribute | Detail |
 |-----------|--------|
 | **Area** | Terminology System |
@@ -276,7 +276,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 
 ## 5. ✅ Audit Conclusion
 
-### 5.1 Overall Assessment
+### <font color="#58a6ff">5.1 Overall Assessment</font>
 
 | Metric | Value |
 |--------|-------|
@@ -286,7 +286,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | **Observations** | 3 |
 | **Audit Opinion** | The AIMS substantially conforms to ISO 42001:2023 requirements. All 5 non-conformances (2 Major, 3 Minor) have been addressed through corrective actions with validated evidence. All non-conformances are CLOSED. |
 
-### 5.2 Corrective Action Summary
+### <font color="#58a6ff">5.2 Corrective Action Summary</font>
 
 | NC ID | Clause | Corrective Action | Target Date | Owner | Status |
 |-------|--------|-------------------|-------------|-------|--------|
@@ -296,7 +296,7 @@ This document records the findings of the first internal audit of the MedFlow V3
 | NC-004 | 8.4/8.2 | CCAP: 5-phase pipeline clinical remediation | 2026-02-28 | Dr. Islam Mekawy | ![CLOSED](https://img.shields.io/badge/CLOSED_2026--02--10-2ea44f?style=flat-square) |
 | NC-005 | 8.1/8.4 | 3-fix remediation: Neutral PE, metadata-aware merging, pre-Gemini timeline | 2026-02-28 | Dr. Islam Mekawy | ![CLOSED](https://img.shields.io/badge/CLOSED_2026--02--10-2ea44f?style=flat-square) |
 
-### 5.3 Strengths Identified
+### <font color="#58a6ff">5.3 Strengths Identified</font>
 
 1. **Defense in Depth** — PII scrubbing uses dual-layer approach (Regex + LLM) with validation pass
 2. **Self-Healing** — Gemini client auto-recovers from API failures without manual intervention
