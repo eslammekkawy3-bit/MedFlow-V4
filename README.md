@@ -93,6 +93,32 @@ flowchart TD
 
 ---
 
+## 🖥️ Governance Command Center
+
+A live, demonstrable AI governance command center that runs synthetic NPHIES claims through MedFlow's 6-layer pipeline, calculates 21 governance metrics, persists everything to SQLite, and generates on-demand PDF audit reports.
+
+| Capability | Detail |
+|---|---|
+| **Streamlit Dashboard** | Port 8502 — 21 monitor tiles, 7 metric groups, live simulation controls |
+| **Simulation Modes** | BENCHMARK (~50ms/claim, no APIs), FAST (Gemini + RAG, no Llama), FULL (all layers) |
+| **21 Governance Monitors** | Clinical Quality · Anti-Gaming · Distribution Drift · Saudi Sovereignty · RAG/Evidence · Pipeline Health · Output Quality |
+| **SQLite Audit Trail** | 4 tables: sessions, metrics, layer telemetry, alert log — auto-created, persists across runs |
+| **PDF Audit Reports** | reportlab A4 — 7 sections, ISO 42001 clause evidence, on-demand generation |
+| **IBM watsonx.governance** | All 21 monitors mapped to watsonx commission_log.json MON IDs |
+
+```bash
+# Run BENCHMARK batch (no API keys required, ~50ms/claim)
+python governance/pipeline_simulator.py --mode benchmark --batch
+
+# Launch Governance Dashboard
+streamlit run governance/governance_dashboard.py --server.port 8502
+
+# Generate PDF Audit Report
+python governance/audit_export.py --days 7
+```
+
+---
+
 ## 📡 Real-Time Governance Monitoring
 
 The system maintains a continuous Real-Time Risk Monitor (RTRM v1.0.0) that subscribes to every decision event. Two independent drift signals are tracked simultaneously across a 100-event rolling window:
@@ -135,9 +161,9 @@ Developed as a primary ISO 42001 Lead Implementer demonstration project. All dev
 | [Internal Audit Report](iso42001-artifacts/Internal_Audit_Report.md) | v1.5 | 97% conformance · 5/5 NCs closed |
 | [ISO Compliance Matrix](iso42001-artifacts/ISO_COMPLIANCE_MATRIX.md) | v1.5 | 39/39 controls implemented |
 | [Algorithmic Fairness Report](iso42001-artifacts/Algorithmic_Fairness_Report.md) | v1.1 | Zero-variance · NC-002 closure evidence |
-| [Implementation Experience Log](iso42001-artifacts/Implementation_Experience_Log.md) | v2.2 | 24 enterprise sprints documented |
+| [Implementation Experience Log](iso42001-artifacts/Implementation_Experience_Log.md) | v2.3 | 329 hours documented · 25 sessions |
 | [Management Review Minutes](iso42001-artifacts/Management_Review_Minutes.md) | v1.4 | Q1 2026 |
-| [Continual Improvement Log](iso42001-artifacts/Continual_Improvement_Log.md) | v1.5 | 15 improvements documented |
+| [Continual Improvement Log](iso42001-artifacts/Continual_Improvement_Log.md) | v1.6 | 16 improvements documented |
 | [Competence Assessment Matrix](iso42001-artifacts/Competence_Assessment_Matrix.md) | v1.3 | Current |
 | [Algorithmic Impact Assessment](iso42001-artifacts/Algorithmic_Impact_Assessment.md) | v1.0 | Patient Safety |
 | [Verification & Validation Plan](iso42001-artifacts/Verification_Validation_Plan.md) | v1.0 | Current |

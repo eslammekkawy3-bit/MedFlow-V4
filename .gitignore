@@ -1,6 +1,5 @@
 # ── Ignore ALL Source Code ────────────────────────────────────────────────────
 *.py
-governance/
 terminology_system/
 gemini_client/
 dashboard_utils/

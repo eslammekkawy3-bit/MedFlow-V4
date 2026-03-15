@@ -6,9 +6,9 @@
 <br>
 
 [![Status](https://img.shields.io/badge/Status-ACTIVE-2ea44f?style=flat-square)]()
-[![Version](https://img.shields.io/badge/Version-1%2E5-0052cc?style=flat-square)]()
+[![Version](https://img.shields.io/badge/Version-1%2E6-0052cc?style=flat-square)]()
 [![ISO 42001](https://img.shields.io/badge/ISO_42001-Clauses_10.1%2F10.2-7b2d8b?style=flat-square)]()
-[![Improvements](https://img.shields.io/badge/Improvements-15_Documented-0052cc?style=flat-square)]()
+[![Improvements](https://img.shields.io/badge/Improvements-16_Documented-0052cc?style=flat-square)]()
 
 </div>
 
@@ -17,14 +17,14 @@
 | Field | Detail |
 |-------|--------|
 | **Document ID** | MF-ISO-15 |
-| **Version** | 1.5 |
-| **Date** | 2026-02-21 |
+| **Version** | 1.6 |
+| **Date** | 2026-03-16 |
 | **Author** | Dr. Islam Mekawy |
 | **Reviewer** | Dr. Islam Mekawy (Lead Researcher) |
 | **Approver** | Dr. Islam Mekawy (AI Governance Lead) |
 | **Classification** | CONFIDENTIAL – Internal Use Only |
 | **ISO 42001 Clause** | Clauses 10.1, 10.2 – Continual Improvement & Corrective Action |
-| **Supersedes** | MF-ISO42001-CIL-001 v1.4 (2026-02-10) |
+| **Supersedes** | MF-ISO42001-CIL-001 v1.5 (2026-02-16) |
 
 ---
 
@@ -297,6 +297,19 @@ This document maintains a register of all improvements made to the MedFlow V3 AI
 | **Evidence** | `synthetic_data.py` v3.0.0, `masterpiece_case/` (30-day Sepsis, 11 reports), `test_episode_pneumonia/` (3-day CAP), `test_episode_sepsis/` (25-day Sepsis) |
 | **Status** | **COMPLETED** |
 
+### <font color="#58a6ff">IMP-018: Native Governance Command Center</font>
+| Attribute | Detail |
+|-----------|--------|
+| **ID** | IMP-018 |
+| **Category** | Compliance (COMP) |
+| **Priority** | P2 - High |
+| **Source** | Sprint Planning (Clause 9.1 live monitoring gap — automated drift detection existed but no live dashboard or metric persistence) |
+| **Description** | Built 4-file Native Governance Command Center: (1) `pipeline_simulator.py` — 3-mode simulator (BENCHMARK seeded mock ~50ms/claim, FAST CDSBrain with regex-only PII, FULL real pipeline); event bus integration emits DECISION_COMPLETE after every claim to keep RTRM alive. (2) `metrics_engine.py` — 21 canonical governance metrics in MetricDef dataclass list (no duplicate key); SQLite 4-table schema (governance_sessions, governance_metrics, layer_telemetry, alert_log); PSI-based drift metrics; threshold alerting. (3) `governance_dashboard.py` — Streamlit port 8502, 7 metric groups × 3 tiles each, Ollama pre-check guard (FULL mode disabled if Ollama offline), Plotly latency bar chart, PDF download. (4) `audit_export.py` — reportlab A4 PDF with 7 sections: cover, executive summary, 21 monitor status table, layer latency, ISO 42001 clause evidence, alert history, technical appendix. All 21 monitors mapped to IBM watsonx.governance commission_log.json MON IDs. |
+| **Benefit** | Live, demonstrable governance monitoring satisfies Clause 9.1 automated monitoring requirement. SQLite audit trail persists across runs. PDF reports provide on-demand Clause 9.3 management review evidence. RTRM kept live via event bus wiring. |
+| **Implemented** | 2026-03-16 (Session 25) |
+| **Evidence** | `governance/pipeline_simulator.py` v1.0.0, `governance/metrics_engine.py` v1.0.0, `governance/governance_dashboard.py` v1.0.0, `governance/audit_export.py` v1.0.0, `governance/data/medflow_governance.db`, `governance/README.md` |
+| **Status** | COMPLETED |
+
 ---
 
 ## 5. 📊 Improvement Summary by Category
@@ -305,10 +318,10 @@ This document maintains a register of all improvements made to the MedFlow V3 AI
 |----------|-----------|---------|-------|
 | Performance (PERF) | 1 | 0 | 1 |
 | Accuracy (ACCU) | 6 | 1 | 7 |
-| Compliance (COMP) | 3 | 0 | 3 |
+| Compliance (COMP) | 4 | 0 | 4 |
 | Reliability (RELI) | 4 | 0 | 4 |
 | Usability (USAB) | 1 | 0 | 1 |
-| **Total** | **15** | **1** | **16** |
+| **Total** | **16** | **1** | **17** |
 
 ### <font color="#58a6ff">Priority Distribution (Completed)</font>
 
@@ -333,6 +346,7 @@ This document maintains a register of all improvements made to the MedFlow V3 AI
 | Session 13-14 | 2 (IMP-016, IMP-017) | Accuracy (NC-005 Closure + V3.0 Engine) |
 | Session 15 | 1 (IMP-012) | Accuracy (NC-002 Fairness Testing) |
 | Session 16 | 1 (IMP-013) | Reliability (NC-003 Drift Detection Closure) |
+| Session 25 | 1 (IMP-018) | Compliance (Native Governance Command Center — 21 monitors, SQLite, Streamlit, PDF) |
 
 ---
 
@@ -355,6 +369,7 @@ This document maintains a register of all improvements made to the MedFlow V3 AI
 | 1.3 | 2026-02-10 | Dr. Islam Mekawy | IMP-016 COMPLETED (NC-005 closed via Masterpiece validation). IMP-017 added: V3.0 Clinical Simulation Engine. Totals: 13 completed, 3 planned. |
 | 1.4 | 2026-02-10 | Dr. Islam Mekawy | IMP-012 COMPLETED (NC-002 closed via fairness testing: 32 cases, 24/24 metrics PASS). Totals: 14 completed, 2 planned. |
 | 1.5 | 2026-02-16 | Dr. Islam Mekawy | IMP-013 COMPLETED (NC-003 closed: RTRM v1.0.0, 2-signal drift detection, 51-case gold standard, 11/11 tests PASS). Totals: 15 completed, 1 planned. |
+| 1.6 | 2026-03-16 | Dr. Islam Mekawy | IMP-018 COMPLETED (Native Governance Command Center: pipeline_simulator.py, metrics_engine.py, governance_dashboard.py, audit_export.py — 21 monitors, SQLite, Streamlit port 8502, PDF audit reports). Totals: 16 completed, 1 planned. |
 
 ---
 
